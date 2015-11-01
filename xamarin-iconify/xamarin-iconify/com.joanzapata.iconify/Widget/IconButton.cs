@@ -5,7 +5,7 @@ using JoanZapata.XamarinIconify.Internal;
 
 namespace JoanZapata.XamarinIconify.Widget
 {
-	public class IconButton : Button, HasOnViewAttachListener
+	public class IconButton : Button, IHasOnViewAttachListener
 	{
 
 		private HasOnViewAttachListener_HasOnViewAttachListenerDelegate @delegate;
@@ -36,7 +36,7 @@ namespace JoanZapata.XamarinIconify.Widget
 		}
 
 
-		public virtual HasOnViewAttachListener_OnViewAttachListener OnViewAttachListener
+		public virtual IHasOnViewAttachListener_OnViewAttachListener OnViewAttachListener
 		{
 			set
 			{
@@ -51,13 +51,13 @@ namespace JoanZapata.XamarinIconify.Widget
 		protected override void OnAttachedToWindow()
 		{
 			base.OnAttachedToWindow();
-			@delegate.onAttachedToWindow();
+			@delegate.OnAttachedToWindow();
 		}
 
 		protected override void OnDetachedFromWindow()
 		{
 			base.OnDetachedFromWindow();
-			@delegate.onDetachedFromWindow();
+			@delegate.OnDetachedFromWindow();
 		}
 	}
 

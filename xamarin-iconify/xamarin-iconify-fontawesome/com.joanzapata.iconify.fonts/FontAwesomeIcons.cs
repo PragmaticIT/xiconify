@@ -1,8 +1,5 @@
 ﻿namespace JoanZapata.XamarinIconify.Fonts
 {
-
-//JAVA TO C# CONVERTER TODO TASK: Enums cannot implement interfaces in .NET:
-//ORIGINAL LINE: public enum FontAwesomeIcons implements Icon
 	public enum FontAwesomeIcons
 	{
 		fa_500px = '\uf26e',
@@ -679,23 +676,5 @@
 		fa_youtube = '\uf167',
 		fa_youtube_play = '\uf16a',
 		fa_youtube_square = '\uf166'
-
-//		char character;
-//
-//		FontAwesomeIcons(char character)
-//		{
-//			this.character = character
-//		}
-//
-//		public String key()
-//		{
-//			return = '_', '-'
-//		}
-//
-//		public char character()
-//		{
-//			return character;
-//		}
 	}
-
 }

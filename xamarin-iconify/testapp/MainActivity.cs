@@ -18,7 +18,7 @@ namespace testapp
 		protected override void OnCreate (Bundle bundle)
 		{
 			base.OnCreate (bundle);
-
+			//JoanZapata.XamarinIconify.Iconify.with (new JoanZapata.XamarinIconify.Fonts.FontAwesomeModule ());
 			// Set our view from the "main" layout resource
 			SetContentView (Resource.Layout.Main);
 
@@ -30,8 +30,6 @@ namespace testapp
 				button.Text = string.Format ("{0} clicks!", count++);
 
 			};
-			var assets = typeof(JoanZapata.XamarinIconify.Fonts.FontAwesomeIcons).Assembly.GetManifestResourceNames ();
-			JoanZapata.XamarinIconify.Iconify.with (new JoanZapata.XamarinIconify.Fonts.FontAwesomeModule ());
 			button.Background = new JoanZapata.XamarinIconify.IconDrawable (this, JoanZapata.XamarinIconify.Fonts.FontAwesomeIcons.fa_500px.ToString()).color(Color.Red);
 		}
 

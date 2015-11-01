@@ -1,32 +1,39 @@
-﻿using Context = Android.Content.Context;
+﻿using System;
+using Android.Runtime;
+using Context = Android.Content.Context;
 using AttributeSet = Android.Util.IAttributeSet;
 using TextView = Android.Widget.TextView;
 using JoanZapata.XamarinIconify.Internal;
 
 namespace JoanZapata.XamarinIconify.Widget
 {
-
-	public class IconTextView : TextView, HasOnViewAttachListener
+	[Android.Runtime.Register("JoanZapata.XamarinIconify.Widget.IconTextView")]
+	public class IconTextView : TextView, IHasOnViewAttachListener
 	{
 
 		private HasOnViewAttachListener_HasOnViewAttachListenerDelegate @delegate;
 
 		public IconTextView(Context context) : base(context)
 		{
-			init();
+			Init();
 		}
 
 		public IconTextView(Context context, AttributeSet attrs) : base(context, attrs)
 		{
-			init();
+			Init();
 		}
 
 		public IconTextView(Context context, AttributeSet attrs, int defStyle) : base(context, attrs, defStyle)
 		{
-			init();
+			Init();
 		}
 
-		private void init()
+	    public IconTextView(IntPtr javaRef, JniHandleOwnership transfer):base(javaRef, transfer)
+	    {
+	        Init();
+	    }
+
+		private void Init()
 		{
 			TransformationMethod = null;
 		}
@@ -35,7 +42,7 @@ namespace JoanZapata.XamarinIconify.Widget
 			base.SetText (Iconify.compute(Context, text, this), type);
 		}
 
-		public virtual HasOnViewAttachListener_OnViewAttachListener OnViewAttachListener
+		public virtual IHasOnViewAttachListener_OnViewAttachListener OnViewAttachListener
 		{
 			set
 			{
@@ -50,12 +57,12 @@ namespace JoanZapata.XamarinIconify.Widget
 		protected override void OnAttachedToWindow ()
 		{
 			base.OnAttachedToWindow ();
-			@delegate.onAttachedToWindow ();
+			@delegate.OnAttachedToWindow ();
 		}
 		protected override void OnDetachedFromWindow ()
 		{
 			base.OnDetachedFromWindow ();
-			@delegate.onDetachedFromWindow ();
+			@delegate.OnDetachedFromWindow ();
 		}
 	}
 

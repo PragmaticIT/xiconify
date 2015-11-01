@@ -1,14 +1,41 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="vertical"
     android:layout_width="fill_parent"
-    android:layout_height="fill_parent"
-    >
-<Button  
-    android:id="@+id/myButton"
-    android:layout_width="match_parent" 
-    android:layout_height="wrap_content" 
-    android:text="@string/hello"
-    />
+    android:layout_height="fill_parent">
+    <Button
+        android:id="@+id/myButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/hello" />
+    <JoanZapata.XamarinIconify.Widget.IconTextView
+        android:text="I {fa-heart-o} to {fa-code} on {fa-android spin} {fa-refresh #00aa00 spin}"
+        android:shadowColor="#22000000"
+        android:shadowDx="3"
+        android:shadowDy="3"
+        android:shadowRadius="1"
+        android:textSize="40sp"
+        android:textColor="#CDCDCD"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+    <JoanZapata.XamarinIconify.Widget.IconTextView
+        android:text=" {fa-cog spin}"
+        android:shadowColor="#22000000"
+        android:shadowDx="3"
+        android:shadowDy="3"
+        android:shadowRadius="1"
+        android:textSize="40sp"
+        android:textColor="#dd0000"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+    <JoanZapata.XamarinIconify.Widget.IconTextView
+        android:text="{fa-cog spin} {entypo_bookmarks} {entypo_emoji_happy} {entypo_emoji_happy spin} {entypo_emoji_happy #00aa00 spin}"
+        android:shadowColor="#22000000"
+        android:shadowDx="3"
+        android:shadowDy="3"
+        android:shadowRadius="1"
+        android:textSize="40sp"
+        android:textColor="#CDCDCD"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
 </LinearLayout>
-

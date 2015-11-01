@@ -13,7 +13,7 @@ namespace JoanZapata.XamarinIconify
 
 		/// <summary>
 		/// List of icon font descriptors </summary>
-		private static IList<IconFontDescriptorWrapper> iconFontDescriptors = new List<IconFontDescriptorWrapper>();
+		private static readonly IList<IconFontDescriptorWrapper> iconFontDescriptors = new List<IconFontDescriptorWrapper>();
 
 		/// <summary>
 		/// Add support for a new icon font. </summary>
@@ -68,7 +68,7 @@ namespace JoanZapata.XamarinIconify
 
 		public static ICharSequence compute(Context context, ICharSequence text, TextView target)
 		{
-			return ParsingUtil.parse(context, iconFontDescriptors, text, target);
+			return ParsingUtil.Parse(context, iconFontDescriptors, text, target);
 		}
 
 		/// <summary>

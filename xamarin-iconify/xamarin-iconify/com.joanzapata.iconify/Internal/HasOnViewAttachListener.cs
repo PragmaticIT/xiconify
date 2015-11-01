@@ -11,12 +11,12 @@ namespace JoanZapata.XamarinIconify.Internal
 	/// needs to implement this interface if it ever want to use spinning icons.
 	/// <br>
 	/// IconTextView, IconButton and IconToggleButton already implement it, but if you need to implement it
-	/// yourself, please use <seealso cref="com.joanzapata.iconify.internal.HasOnViewAttachListener.HasOnViewAttachListenerDelegate"/>
+	/// yourself, please use <seealso cref="IHasOnViewAttachListener.HasOnViewAttachListenerDelegate"/>
 	/// to help you.
 	/// </summary>
-	public interface HasOnViewAttachListener
+	public interface IHasOnViewAttachListener
 	{
-		HasOnViewAttachListener_OnViewAttachListener OnViewAttachListener {set;}
+		IHasOnViewAttachListener_OnViewAttachListener OnViewAttachListener {set;}
 
 		/// <summary>
 		/// Helper class to implement <seealso cref="HasOnViewAttachListener"/>.
@@ -51,33 +51,33 @@ namespace JoanZapata.XamarinIconify.Internal
 		/// </summary>
 	}
 
-	public interface HasOnViewAttachListener_OnViewAttachListener
+	public interface IHasOnViewAttachListener_OnViewAttachListener
 	{
-		void onAttach();
+		void OnAttach();
 
-		void onDetach();
+		void OnDetach();
 	}
 
 	public class HasOnViewAttachListener_HasOnViewAttachListenerDelegate
 	{
 
-		internal readonly TextView view;
-		internal HasOnViewAttachListener_OnViewAttachListener listener;
+		private readonly TextView _view;
+		private IHasOnViewAttachListener_OnViewAttachListener _listener;
 
 		public HasOnViewAttachListener_HasOnViewAttachListenerDelegate(TextView view)
 		{
-			this.view = view;
+			_view = view;
 		}
 
-		public virtual HasOnViewAttachListener_OnViewAttachListener OnViewAttachListener
+		public virtual IHasOnViewAttachListener_OnViewAttachListener OnViewAttachListener
 		{
 			set
 			{
-				if (this.listener != null)
+				if (_listener != null)
 				{
-					this.listener.onDetach();
+					_listener.OnDetach();
 				}
-				this.listener = value;
+				_listener = value;
 //				if (ViewCompat.isAttachedToWindow(view) && value != null)
 //				{
 //					value.onAttach();
@@ -85,19 +85,19 @@ namespace JoanZapata.XamarinIconify.Internal
 			}
 		}
 
-		public virtual void onAttachedToWindow()
+		public virtual void OnAttachedToWindow()
 		{
-			if (listener != null)
+			if (_listener != null)
 			{
-				listener.onAttach();
+				_listener.OnAttach();
 			}
 		}
 
-		public virtual void onDetachedFromWindow()
+		public virtual void OnDetachedFromWindow()
 		{
-			if (listener != null)
+			if (_listener != null)
 			{
-				listener.onDetach();
+				_listener.OnDetach();
 			}
 		}
 

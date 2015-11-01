@@ -16,13 +16,19 @@ namespace JoanZapata.XamarinIconify.Internal
 
 		public IconFontDescriptorWrapper(IIconFontDescriptor iconFontDescriptor)
 		{
-			this._iconFontDescriptor = iconFontDescriptor;
+			_iconFontDescriptor = iconFontDescriptor;
 			_characters = iconFontDescriptor.Characters;
 		}
 
 		public virtual Icon? GetIcon(string key)
 		{
-			return _characters[key].FirstOrDefault();
+//			var p1 = _characters [key.Replace ('-', '_')];
+//			var p2 = p1.First ();
+//			var p3 = _characters [key];
+//			var p4 = p3.First ();
+//			var p5 = _characters.First (x => x.Key == key || x.Key == key.Replace ('-', '_'));
+			var found=_characters [key.Replace ('-', '_')].Union (_characters [key]);
+			return (found.Any ()) ? found.First () : (Icon?)null;
 		}
 
 		public virtual IIconFontDescriptor IconFontDescriptor
@@ -41,10 +47,10 @@ namespace JoanZapata.XamarinIconify.Internal
 			}
 			lock (_lck)
 			{
-				if (_cachedTypeface != null)
-				{
-					return _cachedTypeface;
-				}
+                //if (_cachedTypeface != null)
+                //{
+                //    return _cachedTypeface;
+                //}
 				_cachedTypeface = CreateTypeface (context);
 				return _cachedTypeface;
 			}
@@ -67,7 +73,7 @@ namespace JoanZapata.XamarinIconify.Internal
 			if(FileExists(path)){
 				return Typeface.CreateFromFile(path);
 			}
-			throw new ArgumentOutOfRangeException("Font does not exist or can't write to disk");
+            throw new ArgumentOutOfRangeException("FontFileName", "Font does not exist or can't write to disk");
 		}
 
 

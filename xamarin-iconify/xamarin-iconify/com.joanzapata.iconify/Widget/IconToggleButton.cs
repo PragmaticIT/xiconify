@@ -7,7 +7,7 @@ using Java.Lang;
 namespace JoanZapata.XamarinIconify.Widget
 {
 
-	public class IconToggleButton : ToggleButton, HasOnViewAttachListener
+	public class IconToggleButton : ToggleButton, IHasOnViewAttachListener
 	{
 
 		private HasOnViewAttachListener_HasOnViewAttachListenerDelegate @delegate;
@@ -37,7 +37,7 @@ namespace JoanZapata.XamarinIconify.Widget
 			base.SetText(Iconify.compute(Context, text, this), BufferType.Normal);
 		}
 
-		public virtual HasOnViewAttachListener_OnViewAttachListener OnViewAttachListener
+		public virtual IHasOnViewAttachListener_OnViewAttachListener OnViewAttachListener
 		{
 			set
 			{
@@ -52,13 +52,13 @@ namespace JoanZapata.XamarinIconify.Widget
 		protected override void OnAttachedToWindow()
 		{
 			base.OnAttachedToWindow();
-			@delegate.onAttachedToWindow();
+			@delegate.OnAttachedToWindow();
 		}
 
 		protected override void OnDetachedFromWindow()
 		{
 			base.OnDetachedFromWindow();
-			@delegate.onDetachedFromWindow();
+			@delegate.OnDetachedFromWindow();
 		}
 
 	}
