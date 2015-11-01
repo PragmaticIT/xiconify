@@ -1,0 +1,11 @@
+include ':android-iconify',
+        ':android-iconify-typicons',
+        ':android-iconify-fontawesome',
+        ':android-iconify-entypo',
+        ':android-iconify-material',
+        ':android-iconify-material-community',
+        ':android-iconify-meteocons',
+        ':android-iconify-weathericons',
+        ':android-iconify-simplelineicons',
+        ':android-iconify-ionicons',
+        ':android-iconify-sample'

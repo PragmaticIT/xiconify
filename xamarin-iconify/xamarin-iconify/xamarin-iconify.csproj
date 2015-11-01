@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectTypeGuids>{EFBA0AD7-5A72-4C68-AF49-83D382785DCF};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <ProjectGuid>{7D783126-C543-4A4C-824A-70EDBEA757BF}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <RootNamespace>JoanZapata.XamarinIconify</RootNamespace>
+    <AndroidResgenFile>Resources\Resource.designer.cs</AndroidResgenFile>
+    <AndroidResgenClass>Resource</AndroidResgenClass>
+    <MonoAndroidResourcePrefix>Resources</MonoAndroidResourcePrefix>
+    <MonoAndroidAssetsPrefix>Assets</MonoAndroidAssetsPrefix>
+    <AndroidUseLatestPlatformSdk>False</AndroidUseLatestPlatformSdk>
+    <AssemblyName>xamarin-iconify</AssemblyName>
+    <TargetFrameworkVersion>v4.0.3</TargetFrameworkVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug</OutputPath>
+    <DefineConstants>DEBUG;</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <ConsolePause>false</ConsolePause>
+    <AndroidLinkMode>None</AndroidLinkMode>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>full</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release</OutputPath>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <ConsolePause>false</ConsolePause>
+    <AndroidUseSharedRuntime>false</AndroidUseSharedRuntime>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Core" />
+    <Reference Include="Mono.Android" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Resources\Resource.designer.cs" />
+    <Compile Include="com.joanzapata.iconify\IconDrawable.cs" />
+    <Compile Include="com.joanzapata.iconify\Iconify.cs" />
+    <Compile Include="com.joanzapata.iconify\Internal\CustomTypefaceSpan.cs" />
+    <Compile Include="com.joanzapata.iconify\Internal\HasOnViewAttachListener.cs" />
+    <Compile Include="com.joanzapata.iconify\Internal\IconFontDescriptorWrapper.cs" />
+    <Compile Include="com.joanzapata.iconify\Internal\ParsingUtil.cs" />
+    <Compile Include="com.joanzapata.iconify\Widget\IconButton.cs" />
+    <Compile Include="com.joanzapata.iconify\Widget\IconTextView.cs" />
+    <Compile Include="com.joanzapata.iconify\Widget\IconToggleButton.cs" />
+    <Compile Include="com.joanzapata.iconify\JavaUtils\StringHelpers.cs" />
+    <Compile Include="com.joanzapata.iconify\JavaUtils\DateTimeHelperClass.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\AboutResources.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\values\Strings.xml" />
+  </ItemGroup>
+  <Import Project="$(MSBuildExtensionsPath)\Novell\Novell.MonoDroid.CSharp.targets" />
+  <ItemGroup>
+    <Folder Include="com.joanzapata.iconify\" />
+    <Folder Include="com.joanzapata.iconify\Widget\" />
+    <Folder Include="com.joanzapata.iconify\Internal\" />
+    <Folder Include="com.joanzapata.iconify\JavaUtils\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\xamarin-iconify-common\xamarin-iconify-common.csproj">
+      <Project>{42760D5E-4367-4851-A209-B95C832A5A3A}</Project>
+      <Name>xamarin-iconify-common</Name>
+    </ProjectReference>
+  </ItemGroup>
+</Project>
