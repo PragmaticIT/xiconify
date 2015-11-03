@@ -4,10 +4,10 @@
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProjectTypeGuids>{786C830F-07A1-408B-BD7F-6EE04809D6DB};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
-    <ProjectGuid>{912BA0AB-36E7-4DC0-B2DE-4CFE4261DC39}</ProjectGuid>
+    <ProjectGuid>{E4A90A17-F245-4BF1-B334-4A5BCBCBE061}</ProjectGuid>
     <OutputType>Library</OutputType>
     <RootNamespace>JoanZapata.XamarinIconify.Fonts</RootNamespace>
-    <AssemblyName>xamarin-iconify-fontawesome</AssemblyName>
+    <AssemblyName>xamarin-iconify-ionicons</AssemblyName>
     <TargetFrameworkProfile>Profile78</TargetFrameworkProfile>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
   </PropertyGroup>
@@ -31,8 +31,8 @@
   </PropertyGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="FontAwesomeIcons.cs" />
-    <Compile Include="FontAwesomeModule.cs" />
+    <Compile Include="IonIconsModule.cs" />
+    <Compile Include="IonIcons.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\Portable\$(TargetFrameworkVersion)\Microsoft.Portable.CSharp.targets" />
   <ItemGroup>
@@ -42,6 +42,6 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="android-iconify-fontawesome.ttf" />
+    <EmbeddedResource Include="android-iconify-ionicons.ttf" />
   </ItemGroup>
 </Project>

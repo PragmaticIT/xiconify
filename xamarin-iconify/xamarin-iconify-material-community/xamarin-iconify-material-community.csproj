@@ -4,10 +4,10 @@
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProjectTypeGuids>{786C830F-07A1-408B-BD7F-6EE04809D6DB};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
-    <ProjectGuid>{912BA0AB-36E7-4DC0-B2DE-4CFE4261DC39}</ProjectGuid>
+    <ProjectGuid>{4B2F6B12-BEEB-4F2E-BCE7-0B377FB7EFCE}</ProjectGuid>
     <OutputType>Library</OutputType>
     <RootNamespace>JoanZapata.XamarinIconify.Fonts</RootNamespace>
-    <AssemblyName>xamarin-iconify-fontawesome</AssemblyName>
+    <AssemblyName>xamarin-iconify-material-community</AssemblyName>
     <TargetFrameworkProfile>Profile78</TargetFrameworkProfile>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
   </PropertyGroup>
@@ -31,17 +31,17 @@
   </PropertyGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="FontAwesomeIcons.cs" />
-    <Compile Include="FontAwesomeModule.cs" />
+    <Compile Include="MaterialCommunityModule.cs" />
+    <Compile Include="MaterialCommunityIcons.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\Portable\$(TargetFrameworkVersion)\Microsoft.Portable.CSharp.targets" />
+  <ItemGroup>
+    <EmbeddedResource Include="android-iconify-material-community.ttf" />
+  </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\xamarin-iconify-common\xamarin-iconify-common.csproj">
       <Project>{42760D5E-4367-4851-A209-B95C832A5A3A}</Project>
       <Name>xamarin-iconify-common</Name>
     </ProjectReference>
-  </ItemGroup>
-  <ItemGroup>
-    <EmbeddedResource Include="android-iconify-fontawesome.ttf" />
   </ItemGroup>
 </Project>
