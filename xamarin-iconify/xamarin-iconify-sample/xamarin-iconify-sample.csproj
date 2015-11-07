@@ -6,7 +6,7 @@
     <ProjectTypeGuids>{EFBA0AD7-5A72-4C68-AF49-83D382785DCF};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
     <ProjectGuid>{5B68C38D-6E67-409F-85F1-41A72270F821}</ProjectGuid>
     <OutputType>Library</OutputType>
-    <RootNamespace>xamariniconifysample</RootNamespace>
+    <RootNamespace>JoanZapata.XamarinIconify.Sample</RootNamespace>
     <AndroidApplication>True</AndroidApplication>
     <AndroidResgenFile>Resources\Resource.designer.cs</AndroidResgenFile>
     <AndroidResgenClass>Resource</AndroidResgenClass>
@@ -42,25 +42,106 @@
     <Reference Include="System.Xml" />
     <Reference Include="System.Core" />
     <Reference Include="Mono.Android" />
+    <Reference Include="Xamarin.Android.Support.v4">
+      <HintPath>..\packages\Xamarin.Android.Support.v4.23.0.1.3\lib\MonoAndroid403\Xamarin.Android.Support.v4.dll</HintPath>
+    </Reference>
+    <Reference Include="Xamarin.Android.Support.v7.AppCompat">
+      <HintPath>..\packages\Xamarin.Android.Support.v7.AppCompat.23.0.1.3\lib\MonoAndroid403\Xamarin.Android.Support.v7.AppCompat.dll</HintPath>
+    </Reference>
+    <Reference Include="Xamarin.Android.Support.v7.RecyclerView">
+      <HintPath>..\packages\Xamarin.Android.Support.v7.RecyclerView.23.0.1.3\lib\MonoAndroid403\Xamarin.Android.Support.v7.RecyclerView.dll</HintPath>
+    </Reference>
+    <Reference Include="Xamarin.Android.Support.Design">
+      <HintPath>..\packages\Xamarin.Android.Support.Design.23.0.1.3\lib\MonoAndroid403\Xamarin.Android.Support.Design.dll</HintPath>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="MainActivity.cs" />
-    <Compile Include="Resources\Resource.designer.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Source\Font.cs" />
+    <Compile Include="Source\FontIconsViewPagerAdapter.cs" />
+    <Compile Include="Source\IconAdapter.cs" />
+    <Compile Include="Source\MainActivity.cs" />
+    <Compile Include="Source\SampleApplication.cs" />
+    <Compile Include="Source\Utils\AndroidUtils.cs" />
+    <Compile Include="Resources\Resource.designer.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\AboutResources.txt" />
     <None Include="Properties\AndroidManifest.xml" />
     <None Include="Assets\AboutAssets.txt" />
+    <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <AndroidResource Include="Resources\layout\Main.axml" />
-    <AndroidResource Include="Resources\values\Strings.xml" />
     <AndroidResource Include="Resources\drawable-hdpi\Icon.png" />
     <AndroidResource Include="Resources\drawable-mdpi\Icon.png" />
     <AndroidResource Include="Resources\drawable-xhdpi\Icon.png" />
     <AndroidResource Include="Resources\drawable-xxhdpi\Icon.png" />
     <AndroidResource Include="Resources\drawable-xxxhdpi\Icon.png" />
+    <AndroidResource Include="Resources\layout\activity_main.xml" />
+    <AndroidResource Include="Resources\layout\item_font.xml" />
+    <AndroidResource Include="Resources\layout\item_icon.xml" />
+    <AndroidResource Include="Resources\drawable\header.jpg" />
+    <AndroidResource Include="Resources\drawable-land\header.jpg" />
+    <AndroidResource Include="Resources\values\colors.xml" />
+    <AndroidResource Include="Resources\values\dimen.xml" />
+    <AndroidResource Include="Resources\values\strings.xml" />
+    <AndroidResource Include="Resources\values\styles.xml" />
+    <AndroidResource Include="Resources\values-v21\styles.xml" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Novell\Novell.MonoDroid.CSharp.targets" />
+  <ItemGroup>
+    <Folder Include="Resources\layout\" />
+    <Folder Include="Resources\drawable\" />
+    <Folder Include="Resources\drawable-land\" />
+    <Folder Include="Resources\values\" />
+    <Folder Include="Resources\values-v21\" />
+    <Folder Include="Source\" />
+    <Folder Include="Source\Utils\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\xamarin-iconify\xamarin-iconify.csproj">
+      <Project>{7D783126-C543-4A4C-824A-70EDBEA757BF}</Project>
+      <Name>xamarin-iconify</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\xamarin-iconify-common\xamarin-iconify-common.csproj">
+      <Project>{42760D5E-4367-4851-A209-B95C832A5A3A}</Project>
+      <Name>xamarin-iconify-common</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\xamarin-iconify-entypo\xamarin-iconify-entypo.csproj">
+      <Project>{0CB169DB-4466-4CF2-9545-7DBE6C74B7C3}</Project>
+      <Name>xamarin-iconify-entypo</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\xamarin-iconify-fontawesome\xamarin-iconify-fontawesome.csproj">
+      <Project>{912BA0AB-36E7-4DC0-B2DE-4CFE4261DC39}</Project>
+      <Name>xamarin-iconify-fontawesome</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\xamarin-iconify-ionicons\xamarin-iconify-ionicons.csproj">
+      <Project>{E4A90A17-F245-4BF1-B334-4A5BCBCBE061}</Project>
+      <Name>xamarin-iconify-ionicons</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\xamarin-iconify-material\xamarin-iconify-material.csproj">
+      <Project>{745E775C-D638-4B7A-927E-63EB2D7B584A}</Project>
+      <Name>xamarin-iconify-material</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\xamarin-iconify-material-community\xamarin-iconify-material-community.csproj">
+      <Project>{4B2F6B12-BEEB-4F2E-BCE7-0B377FB7EFCE}</Project>
+      <Name>xamarin-iconify-material-community</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\xamarin-iconify-meteocons\xamarin-iconify-meteocons.csproj">
+      <Project>{C81C5C85-F6E0-4887-9EA7-019D518BE0B7}</Project>
+      <Name>xamarin-iconify-meteocons</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\xamarin-iconify-simplelineicons\xamarin-iconify-simplelineicons.csproj">
+      <Project>{49C71633-7376-44BF-9CD2-18147D46E857}</Project>
+      <Name>xamarin-iconify-simplelineicons</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\xamarin-iconify-typicons\xamarin-iconify-typicons.csproj">
+      <Project>{366189A5-522B-4ED1-A5AD-7BBA726CB555}</Project>
+      <Name>xamarin-iconify-typicons</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\xamarin-iconify-weathericons\xamarin-iconify-weathericons.csproj">
+      <Project>{A846892E-4536-4D0A-8692-FD0187E7AC63}</Project>
+      <Name>xamarin-iconify-weathericons</Name>
+    </ProjectReference>
+  </ItemGroup>
 </Project>

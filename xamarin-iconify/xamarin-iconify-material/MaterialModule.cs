@@ -1,18 +1,18 @@
-﻿namespace com.joanzapata.iconify.fonts
+﻿using System.Linq;
+
+namespace JoanZapata.XamarinIconify.Fonts
 {
-
-
-	public class MaterialModule : IconFontDescriptor
+	public class MaterialModule : IIconFontDescriptor
 	{
-
-		public override string ttfFileName()
-		{
-			return "iconify/android-iconify-material.ttf";
+		public string FontFileName {
+			get {
+				return "android-iconify-material.ttf";
+			}
 		}
+		private static readonly ILookup<string, Icon> _characters = EnumToLookup.ToLookup<MaterialIcons> ();
 
-		public override Icon[] characters()
-		{
-			return MaterialIcons.values();
+		public ILookup<string, Icon> Characters {
+			get{ return _characters; }
 		}
 	}
 

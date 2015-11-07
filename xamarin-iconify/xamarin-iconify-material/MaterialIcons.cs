@@ -1,8 +1,5 @@
-﻿namespace com.joanzapata.iconify.fonts
+﻿namespace JoanZapata.XamarinIconify.Fonts
 {
-
-//JAVA TO C# CONVERTER TODO TASK: Enums cannot implement interfaces in .NET:
-//ORIGINAL LINE: public enum MaterialIcons implements Icon
 	public enum MaterialIcons
 	{
 		md_3d_rotation = '\ue84d',
@@ -800,23 +797,6 @@
 		md_youtube_searched_for = '\ue8fa',
 		md_zoom_in = '\ue8ff',
 		md_zoom_out = '\ue900'
-
-		char character;
-
-		MaterialIcons(char character)
-		{
-			this.character = character
-		}
-
-		public String key()
-		{
-			return = '_', '-'
-		}
-
-		public char character()
-		{
-			return character;
-		}
 	}
 
 }
