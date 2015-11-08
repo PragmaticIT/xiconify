@@ -1,0 +1,22 @@
+<?xml version="1.0"?>
+<package >
+  <metadata>
+    <id>$id$</id>
+    <version>$version$</version>
+    <title>Xamarin Iconify Common</title>
+    <authors>Hubert Galuszka</authors>
+    <owners>Pragmatic.IT</owners>
+    <licenseUrl>https://raw.githubusercontent.com/JoanZapata/android-iconify/master/LICENSE.txt</licenseUrl>
+    <projectUrl>https://github.com/PragmaticIT/xiconify</projectUrl>
+    <iconUrl>https://raw.githubusercontent.com/PragmaticIT/xiconify/master/assets/logo-square.png</iconUrl>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <summary>Common library for Xamarin-Iconify (required by all packages).</summary>
+    <description>Common library for Xamarin-Iconify (required by all packages).
+
+Iconify offers you a huge collection of vector icons to choose from, and an intuitive way to add and customize them in your Android app.
+Original Iconify project by Joan Zapata (https://github.com/JoanZapata/android-iconify) has been converted to C# to simplify integration into Xamarin Android ecosystem.
+</description>
+    <releaseNotes>Initial Commit</releaseNotes>
+    <tags>Xamarin Iconify FontAwesome Icons</tags>
+  </metadata>
+</package>
