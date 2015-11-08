@@ -1691,7 +1691,7 @@ namespace JoanZapata.XamarinIconify.Sample
 			public const int header = 2130837567;
 			
 			// aapt resource value: 0x7f020040
-			public const int Icon = 2130837568;
+			public const int ic_launcher = 2130837568;
 			
 			// aapt resource value: 0x7f020041
 			public const int notification_template_icon_bg = 2130837569;
