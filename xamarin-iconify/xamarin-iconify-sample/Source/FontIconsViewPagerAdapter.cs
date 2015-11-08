@@ -29,7 +29,7 @@ namespace JoanZapata.XamarinIconify.Sample
 		{
 			get
 			{
-				return fonts.Count;
+				return 1+fonts.Count;
 			}
 		}
 
@@ -38,29 +38,26 @@ namespace JoanZapata.XamarinIconify.Sample
 		{
 			Context context = container.Context;
 			LayoutInflater inflater = LayoutInflater.From(context);
-			View view = inflater.Inflate(Resource.Layout.item_font, container, false);
-			RecyclerView recyclerView = view.FindViewById<RecyclerView>(Resource.Id.recyclerView);
-			int nbColumns = AndroidUtils.getScreenSize((Activity) context).width / context.Resources.GetDimensionPixelSize(Resource.Dimension.item_width);
-			recyclerView.SetLayoutManager (new GridLayoutManager (context, nbColumns));
-			recyclerView.SetAdapter (new IconAdapter (fonts[position].Value.Characters));
+			View view = null;
+			if (position == 0) {
+				view = inflater.Inflate (Resource.Layout.samples,container, false);
+			}else{
+				view = inflater.Inflate (Resource.Layout.item_font, container, false);
+				RecyclerView recyclerView = view.FindViewById<RecyclerView> (Resource.Id.recyclerView);
+				int nbColumns = AndroidUtils.getScreenSize ((Activity)context).width / context.Resources.GetDimensionPixelSize (Resource.Dimension.item_width);
+				recyclerView.SetLayoutManager (new GridLayoutManager (context, nbColumns));
+				recyclerView.SetAdapter (new IconAdapter (fonts [position-1].Value.Characters));
+			}
 			container.AddView(view);
 			return view;
 		}
 
 		public override Java.Lang.ICharSequence GetPageTitleFormatted (int position)
 		{
-			return new Java.Lang.String (fonts [position].Key);
+			return position == 0 
+				? new Java.Lang.String ("Widgets") 
+				: new Java.Lang.String (fonts [position - 1].Key);
 		}
-
-//		public override bool IsViewFromObject(View view, object @object)
-//		{
-//			return view == @object;
-//		}
-//
-//		public override void DestroyItem(ViewGroup container, int position, object @object)
-//		{
-//			container.RemoveView((View) @object);
-//		}
 
 		public override bool IsViewFromObject (View view, Java.Lang.Object objectValue)
 		{

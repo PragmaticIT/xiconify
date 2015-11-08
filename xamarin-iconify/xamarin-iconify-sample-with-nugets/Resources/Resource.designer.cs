@@ -1772,6 +1772,12 @@ namespace JoanZapata.XamarinIconify.Sample
 			// aapt resource value: 0x7f060029
 			public const int bottom = 2131099689;
 			
+			// aapt resource value: 0x7f060080
+			public const int button1 = 2131099776;
+			
+			// aapt resource value: 0x7f060082
+			public const int button2 = 2131099778;
+			
 			// aapt resource value: 0x7f06004c
 			public const int buttonPanel = 2131099724;
 			
@@ -1940,6 +1946,9 @@ namespace JoanZapata.XamarinIconify.Sample
 			// aapt resource value: 0x7f06006c
 			public const int recyclerView = 2131099756;
 			
+			// aapt resource value: 0x7f06007b
+			public const int relativeLayout1 = 2131099771;
+			
 			// aapt resource value: 0x7f06002f
 			public const int right = 2131099695;
 			
@@ -2006,6 +2015,12 @@ namespace JoanZapata.XamarinIconify.Sample
 			// aapt resource value: 0x7f06006a
 			public const int snackbar_text = 2131099754;
 			
+			// aapt resource value: 0x7f06007f
+			public const int space1 = 2131099775;
+			
+			// aapt resource value: 0x7f060083
+			public const int space2 = 2131099779;
+			
 			// aapt resource value: 0x7f060008
 			public const int split_action_bar = 2131099656;
 			
@@ -2042,6 +2057,21 @@ namespace JoanZapata.XamarinIconify.Sample
 			// aapt resource value: 0x7f060049
 			public const int textSpacerNoButtons = 2131099721;
 			
+			// aapt resource value: 0x7f06007c
+			public const int textView2 = 2131099772;
+			
+			// aapt resource value: 0x7f06007d
+			public const int textView3 = 2131099773;
+			
+			// aapt resource value: 0x7f060081
+			public const int textView4 = 2131099777;
+			
+			// aapt resource value: 0x7f060085
+			public const int textView5 = 2131099781;
+			
+			// aapt resource value: 0x7f06007e
+			public const int textView6 = 2131099774;
+			
 			// aapt resource value: 0x7f060074
 			public const int time = 2131099764;
 			
@@ -2050,6 +2080,12 @@ namespace JoanZapata.XamarinIconify.Sample
 			
 			// aapt resource value: 0x7f060045
 			public const int title_template = 2131099717;
+			
+			// aapt resource value: 0x7f060084
+			public const int toggleButton1 = 2131099780;
+			
+			// aapt resource value: 0x7f060086
+			public const int toggleButton2 = 2131099782;
 			
 			// aapt resource value: 0x7f060067
 			public const int toolbar = 2131099751;
@@ -2255,16 +2291,19 @@ namespace JoanZapata.XamarinIconify.Sample
 			public const int notification_template_part_time = 2130903083;
 			
 			// aapt resource value: 0x7f03002c
-			public const int select_dialog_item_material = 2130903084;
+			public const int samples = 2130903084;
 			
 			// aapt resource value: 0x7f03002d
-			public const int select_dialog_multichoice_material = 2130903085;
+			public const int select_dialog_item_material = 2130903085;
 			
 			// aapt resource value: 0x7f03002e
-			public const int select_dialog_singlechoice_material = 2130903086;
+			public const int select_dialog_multichoice_material = 2130903086;
 			
 			// aapt resource value: 0x7f03002f
-			public const int support_simple_spinner_dropdown_item = 2130903087;
+			public const int select_dialog_singlechoice_material = 2130903087;
+			
+			// aapt resource value: 0x7f030030
+			public const int support_simple_spinner_dropdown_item = 2130903088;
 			
 			static Layout()
 			{

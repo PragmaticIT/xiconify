@@ -5,12 +5,12 @@ using Android.App;
 // Information about this assembly is defined by the following attributes.
 // Change them to the values specific to your project.
 
-[assembly: AssemblyTitle ("xamarin-iconify-sample")]
+[assembly: AssemblyTitle ("xamarin-iconify-sample-with-nugets")]
 [assembly: AssemblyDescription ("")]
 [assembly: AssemblyConfiguration ("")]
 [assembly: AssemblyCompany ("")]
 [assembly: AssemblyProduct ("")]
-[assembly: AssemblyCopyright("Joan Zapata")]
+[assembly: AssemblyCopyright ("user")]
 [assembly: AssemblyTrademark ("")]
 [assembly: AssemblyCulture ("")]
 

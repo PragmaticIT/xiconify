@@ -2,6 +2,7 @@
 using AttributeSet = Android.Util.IAttributeSet;
 using Button = Android.Widget.Button;
 using JoanZapata.XamarinIconify.Internal;
+using System;
 
 namespace JoanZapata.XamarinIconify.Widget
 {
@@ -24,6 +25,12 @@ namespace JoanZapata.XamarinIconify.Widget
 		{
 			init();
 		}
+
+		public IconButton(IntPtr javaRef, Android.Runtime.JniHandleOwnership transfer):base(javaRef, transfer)
+		{
+			init();
+		}
+
 
 		private void init()
 		{

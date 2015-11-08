@@ -3,6 +3,7 @@ using AttributeSet = Android.Util.IAttributeSet;
 using ToggleButton = Android.Widget.ToggleButton;
 using JoanZapata.XamarinIconify.Internal;
 using Java.Lang;
+using System;
 
 namespace JoanZapata.XamarinIconify.Widget
 {
@@ -26,6 +27,12 @@ namespace JoanZapata.XamarinIconify.Widget
 		{
 			init();
 		}
+
+		public IconToggleButton(IntPtr javaRef, Android.Runtime.JniHandleOwnership transfer):base(javaRef, transfer)
+		{
+			init();
+		}
+
 
 		private void init()
 		{

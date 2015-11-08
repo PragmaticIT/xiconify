@@ -1,0 +1,185 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectTypeGuids>{EFBA0AD7-5A72-4C68-AF49-83D382785DCF};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <ProjectGuid>{55373A70-6D83-4DC7-A225-E4BA87703104}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <RootNamespace>JoanZapata.XamarinIconify.Sample</RootNamespace>
+    <AndroidApplication>True</AndroidApplication>
+    <AndroidResgenFile>Resources\Resource.designer.cs</AndroidResgenFile>
+    <AndroidResgenClass>Resource</AndroidResgenClass>
+    <MonoAndroidResourcePrefix>Resources</MonoAndroidResourcePrefix>
+    <MonoAndroidAssetsPrefix>Assets</MonoAndroidAssetsPrefix>
+    <AndroidUseLatestPlatformSdk>False</AndroidUseLatestPlatformSdk>
+    <AssemblyName>xamarin-iconify-sample-with-nugets</AssemblyName>
+    <AndroidManifest>Properties\AndroidManifest.xml</AndroidManifest>
+    <ReleaseVersion>1.0.1</ReleaseVersion>
+    <TargetFrameworkVersion>v4.4</TargetFrameworkVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug</OutputPath>
+    <DefineConstants>DEBUG;</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <ConsolePause>false</ConsolePause>
+    <AndroidLinkMode>None</AndroidLinkMode>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>full</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release</OutputPath>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <ConsolePause>false</ConsolePause>
+    <AndroidUseSharedRuntime>false</AndroidUseSharedRuntime>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Core" />
+    <Reference Include="Mono.Android" />
+    <Reference Include="xamarin-iconify-common">
+      <HintPath>..\packages\xamarin-iconify-common.1.0.0.0\lib\portable-net45+win+wp80+MonoAndroid10+xamarinios10+MonoTouch10\xamarin-iconify-common.dll</HintPath>
+    </Reference>
+    <Reference Include="xamarin-iconify-entypo">
+      <HintPath>..\packages\xamarin-iconify-entypo.1.0.0.0\lib\portable-net45+win+wp80+MonoAndroid10+xamarinios10+MonoTouch10\xamarin-iconify-entypo.dll</HintPath>
+    </Reference>
+    <Reference Include="xamarin-iconify-fontawesome">
+      <HintPath>..\packages\xamarin-iconify-fontawesome.1.0.0.0\lib\portable-net45+win+wp80+MonoAndroid10+xamarinios10+MonoTouch10\xamarin-iconify-fontawesome.dll</HintPath>
+    </Reference>
+    <Reference Include="xamarin-iconify-ionicons">
+      <HintPath>..\packages\xamarin-iconify-ionicons.1.0.0.0\lib\portable-net45+win+wp80+MonoAndroid10+xamarinios10+MonoTouch10\xamarin-iconify-ionicons.dll</HintPath>
+    </Reference>
+    <Reference Include="xamarin-iconify-material-community">
+      <HintPath>..\packages\xamarin-iconify-material-community.1.0.0.0\lib\portable-net45+win+wp80+MonoAndroid10+xamarinios10+MonoTouch10\xamarin-iconify-material-community.dll</HintPath>
+    </Reference>
+    <Reference Include="xamarin-iconify-material">
+      <HintPath>..\packages\xamarin-iconify-material.1.0.0.0\lib\portable-net45+win+wp80+MonoAndroid10+xamarinios10+MonoTouch10\xamarin-iconify-material.dll</HintPath>
+    </Reference>
+    <Reference Include="xamarin-iconify-meteocons">
+      <HintPath>..\packages\xamarin-iconify-meteocons.1.0.0.0\lib\portable-net45+win+wp80+MonoAndroid10+xamarinios10+MonoTouch10\xamarin-iconify-meteocons.dll</HintPath>
+    </Reference>
+    <Reference Include="xamarin-iconify-simplelineicons">
+      <HintPath>..\packages\xamarin-iconify-simplelineicons.1.0.0.0\lib\portable-net45+win+wp80+MonoAndroid10+xamarinios10+MonoTouch10\xamarin-iconify-simplelineicons.dll</HintPath>
+    </Reference>
+    <Reference Include="xamarin-iconify-typicons">
+      <HintPath>..\packages\xamarin-iconify-typicons.1.0.0.0\lib\portable-net45+win+wp80+MonoAndroid10+xamarinios10+MonoTouch10\xamarin-iconify-typicons.dll</HintPath>
+    </Reference>
+    <Reference Include="xamarin-iconify-weathericons">
+      <HintPath>..\packages\xamarin-iconify-weathericons.1.0.0.0\lib\portable-net45+win+wp80+MonoAndroid10+xamarinios10+MonoTouch10\xamarin-iconify-weathericons.dll</HintPath>
+    </Reference>
+    <Reference Include="Xamarin.Android.Support.v4">
+      <HintPath>..\packages\Xamarin.Android.Support.v4.23.0.1.3\lib\MonoAndroid403\Xamarin.Android.Support.v4.dll</HintPath>
+    </Reference>
+    <Reference Include="Xamarin.Android.Support.v7.AppCompat">
+      <HintPath>..\packages\Xamarin.Android.Support.v7.AppCompat.23.0.1.3\lib\MonoAndroid403\Xamarin.Android.Support.v7.AppCompat.dll</HintPath>
+    </Reference>
+    <Reference Include="Xamarin.Android.Support.Design">
+      <HintPath>..\packages\Xamarin.Android.Support.Design.23.0.1.3\lib\MonoAndroid403\Xamarin.Android.Support.Design.dll</HintPath>
+    </Reference>
+    <Reference Include="Xamarin.Android.Support.v7.RecyclerView">
+      <HintPath>..\packages\Xamarin.Android.Support.v7.RecyclerView.23.0.1.3\lib\MonoAndroid403\Xamarin.Android.Support.v7.RecyclerView.dll</HintPath>
+    </Reference>
+    <Reference Include="xamarin-iconify">
+      <HintPath>..\packages\xamarin-iconify.1.0.1\lib\MonoAndroid403\xamarin-iconify.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Resources\Resource.designer.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="..\xamarin-iconify-sample\Source\Utils\AndroidUtils.cs">
+      <Link>Source\Utils\AndroidUtils.cs</Link>
+    </Compile>
+    <Compile Include="..\xamarin-iconify-sample\Source\Font.cs">
+      <Link>Source\Font.cs</Link>
+    </Compile>
+    <Compile Include="..\xamarin-iconify-sample\Source\FontIconsViewPagerAdapter.cs">
+      <Link>Source\FontIconsViewPagerAdapter.cs</Link>
+    </Compile>
+    <Compile Include="..\xamarin-iconify-sample\Source\IconAdapter.cs">
+      <Link>Source\IconAdapter.cs</Link>
+    </Compile>
+    <Compile Include="..\xamarin-iconify-sample\Source\MainActivity.cs">
+      <Link>Source\MainActivity.cs</Link>
+    </Compile>
+    <Compile Include="..\xamarin-iconify-sample\Source\SampleApplication.cs">
+      <Link>Source\SampleApplication.cs</Link>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\AboutResources.txt" />
+    <None Include="Properties\AndroidManifest.xml" />
+    <None Include="Assets\AboutAssets.txt" />
+    <None Include="packages.config" />
+  </ItemGroup>
+  <Import Project="$(MSBuildExtensionsPath)\Novell\Novell.MonoDroid.CSharp.targets" />
+  <ItemGroup>
+    <Folder Include="Resources\drawable-hdpi\" />
+    <Folder Include="Resources\drawable-mdpi\" />
+    <Folder Include="Resources\drawable-xhdpi\" />
+    <Folder Include="Resources\drawable-xxhdpi\" />
+    <Folder Include="Resources\drawable-xxxhdpi\" />
+    <Folder Include="Resources\layout\" />
+    <Folder Include="Resources\values\" />
+    <Folder Include="Resources\drawable\" />
+    <Folder Include="Resources\drawable-land\" />
+    <Folder Include="Resources\values-v21\" />
+    <Folder Include="Source\" />
+    <Folder Include="Source\Utils\" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="..\xamarin-iconify-sample\Resources\drawable-hdpi\ic_launcher.png">
+      <Link>Resources\drawable-hdpi\ic_launcher.png</Link>
+    </AndroidResource>
+    <AndroidResource Include="..\xamarin-iconify-sample\Resources\drawable\header.jpg">
+      <Link>Resources\drawable\header.jpg</Link>
+    </AndroidResource>
+    <AndroidResource Include="..\xamarin-iconify-sample\Resources\drawable-mdpi\ic_launcher.png">
+      <Link>Resources\drawable-mdpi\ic_launcher.png</Link>
+    </AndroidResource>
+    <AndroidResource Include="..\xamarin-iconify-sample\Resources\drawable-land\header.jpg">
+      <Link>Resources\drawable-land\header.jpg</Link>
+    </AndroidResource>
+    <AndroidResource Include="..\xamarin-iconify-sample\Resources\drawable-xhdpi\ic_launcher.png">
+      <Link>Resources\drawable-xhdpi\ic_launcher.png</Link>
+    </AndroidResource>
+    <AndroidResource Include="..\xamarin-iconify-sample\Resources\drawable-xxhdpi\ic_launcher.png">
+      <Link>Resources\drawable-xxhdpi\ic_launcher.png</Link>
+    </AndroidResource>
+    <AndroidResource Include="..\xamarin-iconify-sample\Resources\drawable-xxxhdpi\ic_launcher.png">
+      <Link>Resources\drawable-xxxhdpi\ic_launcher.png</Link>
+    </AndroidResource>
+    <AndroidResource Include="..\xamarin-iconify-sample\Resources\layout\activity_main.xml">
+      <Link>Resources\layout\activity_main.xml</Link>
+    </AndroidResource>
+    <AndroidResource Include="..\xamarin-iconify-sample\Resources\layout\item_font.xml">
+      <Link>Resources\layout\item_font.xml</Link>
+    </AndroidResource>
+    <AndroidResource Include="..\xamarin-iconify-sample\Resources\layout\item_icon.xml">
+      <Link>Resources\layout\item_icon.xml</Link>
+    </AndroidResource>
+    <AndroidResource Include="..\xamarin-iconify-sample\Resources\values\colors.xml">
+      <Link>Resources\values\colors.xml</Link>
+    </AndroidResource>
+    <AndroidResource Include="..\xamarin-iconify-sample\Resources\values\dimen.xml">
+      <Link>Resources\values\dimen.xml</Link>
+    </AndroidResource>
+    <AndroidResource Include="..\xamarin-iconify-sample\Resources\values\strings.xml">
+      <Link>Resources\values\strings.xml</Link>
+    </AndroidResource>
+    <AndroidResource Include="..\xamarin-iconify-sample\Resources\values\styles.xml">
+      <Link>Resources\values\styles.xml</Link>
+    </AndroidResource>
+    <AndroidResource Include="..\xamarin-iconify-sample\Resources\values-v21\styles.xml">
+      <Link>Resources\values-v21\styles.xml</Link>
+    </AndroidResource>
+    <AndroidResource Include="..\xamarin-iconify-sample\Resources\layout\samples.axml">
+      <Link>Resources\layout\samples.axml</Link>
+    </AndroidResource>
+  </ItemGroup>
+</Project>
