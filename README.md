@@ -29,8 +29,8 @@
 		    {
 			    base.OnCreate();
 			    JoanZapata.XamarinIconify.Iconify
-				    .with (new JoanZapata.XamarinIconify.Fonts.FontAwesomeModule ())
-    				.with (new JoanZapata.XamarinIconify.Fonts.IonIconsModule ())
+				    .With (new JoanZapata.XamarinIconify.Fonts.FontAwesomeModule ())
+    				.With (new JoanZapata.XamarinIconify.Fonts.IonIconsModule ())
 	    			;
 		    }
 	    }
@@ -111,17 +111,21 @@ To create your own icon pack you need to:
 
     ```
 6. Reference the library from your Android project and register Module class into Iconify
+
     ```c#
     //in MyApplication.cs OnCreate method
                JoanZapata.XamarinIconify.Iconify
-                   .with (new JoanZapata.XamarinIconify.Fonts.FontAwesomeModule ())
-                  .with (new JoanZapata.XamarinIconify.Fonts.IonIconsModule ())
-                   .with (new MyAwesomeModule())
+                   .With (new JoanZapata.XamarinIconify.Fonts.FontAwesomeModule ())
+                   .With (new JoanZapata.XamarinIconify.Fonts.IonIconsModule ())
+                   .With (new MyAwesomeModule())
                    ;
     ```
 
 -----
 
+### Differences between original Java Iconify and Xamarin Iconify
+1. Original Iconify project has dependency on v4 Support library. I decided to remove it.
+2. Iconify initializes fonts using apk raw assets. Since merging assets from various sources is a bit complicated in Xamarin, I decided to embed fonts as resources (Embedded Resource in .NET meaning) and then store them on the filesystem during initialization. This makes the font packaging and distribution much more clear and easy.
 
 ## License
 ```
