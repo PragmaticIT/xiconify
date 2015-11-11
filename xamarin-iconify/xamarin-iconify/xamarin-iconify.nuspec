@@ -2,7 +2,7 @@
 <package >
   <metadata>
     <id>xamarin-iconify</id>
-    <version>1.0.1</version>
+    <version>1.0.2</version>
     <title>Xamarin Iconify Core Package</title>
     <authors>Hubert Galuszka</authors>
     <owners>Pragmatic.IT</owners>
@@ -16,7 +16,7 @@
 Iconify offers you a huge collection of vector icons to choose from, and an intuitive way to add and customize them in your Android app.
 Original Iconify project by Joan Zapata (https://github.com/JoanZapata/android-iconify) has been converted to C# to simplify integration into Xamarin Android ecosystem.
 </description>
-    <releaseNotes>Initial Commit</releaseNotes>
+    <releaseNotes>Fixed broken animation on IconToggleButton</releaseNotes>
     <tags>Xamarin Iconify FontAwesome Icons</tags>
     <dependencies>
         <dependency id="xamarin-iconify-common" version="1.0.0"/>

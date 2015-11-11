@@ -1,73 +1,69 @@
-﻿using Context = Android.Content.Context;
-using AttributeSet = Android.Util.IAttributeSet;
-using ToggleButton = Android.Widget.ToggleButton;
-using JoanZapata.XamarinIconify.Internal;
+﻿using System;
+using Android.Content;
+using Android.Runtime;
+using Android.Widget;
 using Java.Lang;
-using System;
+using JoanZapata.XamarinIconify.Internal;
+using AttributeSet = Android.Util.IAttributeSet;
 
 namespace JoanZapata.XamarinIconify.Widget
 {
+    public class IconToggleButton : ToggleButton, IHasOnViewAttachListener
+    {
+        private HasOnViewAttachListenerDelegate _delegate;
 
-	public class IconToggleButton : ToggleButton, IHasOnViewAttachListener
-	{
+        public IconToggleButton(Context context, AttributeSet attrs, int defStyle) : base(context, attrs, defStyle)
+        {
+            Init();
+        }
 
-		private HasOnViewAttachListener_HasOnViewAttachListenerDelegate @delegate;
+        public IconToggleButton(Context context, AttributeSet attrs) : base(context, attrs)
+        {
+            Init();
+        }
 
-		public IconToggleButton(Context context, AttributeSet attrs, int defStyle) : base(context, attrs, defStyle)
-		{
-			init();
-		}
+        public IconToggleButton(Context context) : base(context)
+        {
+            Init();
+        }
 
-		public IconToggleButton(Context context, AttributeSet attrs) : base(context, attrs)
-		{
-			init();
-		}
+        public IconToggleButton(IntPtr javaRef, JniHandleOwnership transfer) : base(javaRef, transfer)
+        {
+            Init();
+        }
 
-		public IconToggleButton(Context context) : base(context)
-		{
-			init();
-		}
+        public virtual IOnViewAttachListener OnViewAttachListener
+        {
+            set
+            {
+                if (_delegate == null)
+                {
+                    _delegate = new HasOnViewAttachListenerDelegate(this);
+                }
+                _delegate.OnViewAttachListener = value;
+            }
+        }
 
-		public IconToggleButton(IntPtr javaRef, Android.Runtime.JniHandleOwnership transfer):base(javaRef, transfer)
-		{
-			init();
-		}
+        private void Init()
+        {
+            TransformationMethod = null;
+        }
 
+        public override void SetText(ICharSequence text, BufferType type)
+        {
+            base.SetText(Iconify.Compute(Context, text, this), BufferType.Normal);
+        }
 
-		private void init()
-		{
-			TransformationMethod = null;
-		}
+        protected override void OnAttachedToWindow()
+        {
+            base.OnAttachedToWindow();
+            _delegate.OnAttachedToWindow();
+        }
 
-		public override void SetText(ICharSequence text, BufferType type)
-		{
-			base.SetText(Iconify.compute(Context, text, this), BufferType.Normal);
-		}
-
-		public virtual IHasOnViewAttachListener_OnViewAttachListener OnViewAttachListener
-		{
-			set
-			{
-				if (@delegate == null)
-				{
-					@delegate = new HasOnViewAttachListener_HasOnViewAttachListenerDelegate(this);
-				}
-				@delegate.OnViewAttachListener = value;
-			}
-		}
-
-		protected override void OnAttachedToWindow()
-		{
-			base.OnAttachedToWindow();
-			@delegate.OnAttachedToWindow();
-		}
-
-		protected override void OnDetachedFromWindow()
-		{
-			base.OnDetachedFromWindow();
-			@delegate.OnDetachedFromWindow();
-		}
-
-	}
-
+        protected override void OnDetachedFromWindow()
+        {
+            base.OnDetachedFromWindow();
+            _delegate.OnDetachedFromWindow();
+        }
+    }
 }

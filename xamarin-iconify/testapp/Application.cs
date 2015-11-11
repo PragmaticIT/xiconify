@@ -18,8 +18,8 @@ namespace testapp
 		{
 			base.OnCreate ();
 			JoanZapata.XamarinIconify.Iconify
-				.with (new JoanZapata.XamarinIconify.Fonts.EntypoModule ())
-				.with (new JoanZapata.XamarinIconify.Fonts.FontAwesomeModule ())
+				.With (new JoanZapata.XamarinIconify.Fonts.EntypoModule ())
+				.With (new JoanZapata.XamarinIconify.Fonts.FontAwesomeModule ())
 				;
 		}
 	}

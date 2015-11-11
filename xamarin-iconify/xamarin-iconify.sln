@@ -125,7 +125,7 @@ Global
 	EndGlobalSection
 	GlobalSection(MonoDevelopProperties) = preSolution
 		description = @Iconify offers you a huge collection of vector icons to choose from, and an intuitive way to add and customize them in your Android app.\nOriginal Iconify project by Joan Zapata (https://github.com/JoanZapata/android-iconify) has been converted to C# to simplify integration into Xamarin Android ecosystem.
-		version = 1.0.1
+		version = 1.0.2
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

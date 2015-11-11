@@ -23,7 +23,7 @@ namespace JoanZapata.XamarinIconify.Sample
 			base.OnCreate();
 			foreach (var font in FontManager.Fonts)
 			{
-				Iconify.with(font.Value);
+				Iconify.With(font.Value);
 			}
 		}
 	}

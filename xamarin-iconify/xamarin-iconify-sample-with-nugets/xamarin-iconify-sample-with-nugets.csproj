@@ -15,7 +15,7 @@
     <AndroidUseLatestPlatformSdk>False</AndroidUseLatestPlatformSdk>
     <AssemblyName>xamarin-iconify-sample-with-nugets</AssemblyName>
     <AndroidManifest>Properties\AndroidManifest.xml</AndroidManifest>
-    <ReleaseVersion>1.0.1</ReleaseVersion>
+    <ReleaseVersion>1.0.2</ReleaseVersion>
     <TargetFrameworkVersion>v4.4</TargetFrameworkVersion>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
@@ -86,7 +86,7 @@
       <HintPath>..\packages\Xamarin.Android.Support.v7.RecyclerView.23.0.1.3\lib\MonoAndroid403\Xamarin.Android.Support.v7.RecyclerView.dll</HintPath>
     </Reference>
     <Reference Include="xamarin-iconify">
-      <HintPath>..\packages\xamarin-iconify.1.0.1\lib\MonoAndroid403\xamarin-iconify.dll</HintPath>
+      <HintPath>..\packages\xamarin-iconify.1.0.2\lib\MonoAndroid23\xamarin-iconify.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>

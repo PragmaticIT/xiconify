@@ -1,71 +1,69 @@
-﻿using Context = Android.Content.Context;
-using AttributeSet = Android.Util.IAttributeSet;
-using Button = Android.Widget.Button;
+﻿using System;
+using Android.Content;
+using Android.Runtime;
+using Android.Widget;
+using Java.Lang;
 using JoanZapata.XamarinIconify.Internal;
-using System;
+using AttributeSet = Android.Util.IAttributeSet;
 
 namespace JoanZapata.XamarinIconify.Widget
 {
-	public class IconButton : Button, IHasOnViewAttachListener
-	{
+    public class IconButton : Button, IHasOnViewAttachListener
+    {
+        private HasOnViewAttachListenerDelegate _delegate;
 
-		private HasOnViewAttachListener_HasOnViewAttachListenerDelegate @delegate;
+        public IconButton(Context context) : base(context)
+        {
+            Init();
+        }
 
-		public IconButton(Context context) : base(context)
-		{
-			init();
-		}
+        public IconButton(Context context, AttributeSet attrs) : base(context, attrs)
+        {
+            Init();
+        }
 
-		public IconButton(Context context, AttributeSet attrs) : base(context, attrs)
-		{
-			init();
-		}
+        public IconButton(Context context, AttributeSet attrs, int defStyle) : base(context, attrs, defStyle)
+        {
+            Init();
+        }
 
-		public IconButton(Context context, AttributeSet attrs, int defStyle) : base(context, attrs, defStyle)
-		{
-			init();
-		}
+        public IconButton(IntPtr javaRef, JniHandleOwnership transfer) : base(javaRef, transfer)
+        {
+            Init();
+        }
 
-		public IconButton(IntPtr javaRef, Android.Runtime.JniHandleOwnership transfer):base(javaRef, transfer)
-		{
-			init();
-		}
+        public virtual IOnViewAttachListener OnViewAttachListener
+        {
+            set
+            {
+                if (_delegate == null)
+                {
+                    _delegate = new HasOnViewAttachListenerDelegate(this);
+                }
+                _delegate.OnViewAttachListener = value;
+            }
+        }
 
+        private void Init()
+        {
+            TransformationMethod = null;
+        }
 
-		private void init()
-		{
-			TransformationMethod = null;
-		}
+        public override void SetText(ICharSequence text, BufferType type)
+        {
+            base.SetText(Iconify.Compute(Context, text, this), type);
+        }
 
-		public override void SetText (Java.Lang.ICharSequence text, BufferType type)
-		{
-			base.SetText (Iconify.compute (Context, text, this), type);
-		}
+        protected override void OnAttachedToWindow()
+        {
+            base.OnAttachedToWindow();
+            _delegate.OnAttachedToWindow();
+        }
 
-
-		public virtual IHasOnViewAttachListener_OnViewAttachListener OnViewAttachListener
-		{
-			set
-			{
-				if (@delegate == null)
-				{
-					@delegate = new HasOnViewAttachListener_HasOnViewAttachListenerDelegate(this);
-				}
-				@delegate.OnViewAttachListener = value;
-			}
-		}
-
-		protected override void OnAttachedToWindow()
-		{
-			base.OnAttachedToWindow();
-			@delegate.OnAttachedToWindow();
-		}
-
-		protected override void OnDetachedFromWindow()
-		{
-			base.OnDetachedFromWindow();
-			@delegate.OnDetachedFromWindow();
-		}
-	}
-
+        protected override void OnDetachedFromWindow()
+        {
+            base.OnDetachedFromWindow();
+            _delegate.OnDetachedFromWindow();
+        }
+    }
 }

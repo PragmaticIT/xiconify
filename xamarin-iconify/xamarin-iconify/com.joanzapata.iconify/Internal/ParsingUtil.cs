@@ -23,7 +23,7 @@ namespace JoanZapata.XamarinIconify.Internal
         {
             context = context.ApplicationContext;
 
-            // Analyse the text and replace {} blocks with the appropriate character
+            // Analyse the text and replace {} blocks With the appropriate character
             // Retain all transformations in the accumulator
             var spannableBuilder = new SpannableStringBuilder(text);
             RecursivePrepareSpannableIndexes(context, text.ToString(), spannableBuilder, iconFontDescriptors, 0);
@@ -44,7 +44,7 @@ namespace JoanZapata.XamarinIconify.Internal
                 }
 
                 ((IHasOnViewAttachListener) target).OnViewAttachListener =
-                    new HasOnViewAttachListener_OnViewAttachListenerAnonymousInnerClassHelper(target);
+                    new OnViewAttachListenerOnViewAttachListenerAnonymousInnerClassHelper(target);
             }
             else if (target is IHasOnViewAttachListener)
             {
@@ -56,7 +56,8 @@ namespace JoanZapata.XamarinIconify.Internal
 
         private static bool HasAnimatedSpans(SpannableStringBuilder spannableBuilder)
         {
-            var spans = spannableBuilder.GetSpans(0, spannableBuilder.Length(), Class.FromType( typeof(CustomTypefaceSpan)));
+            var spans = spannableBuilder.GetSpans(0, spannableBuilder.Length(),
+                Class.FromType(typeof (CustomTypefaceSpan)));
             return spans.OfType<CustomTypefaceSpan>().Any(customTypefaceSpan => customTypefaceSpan.Animated);
         }
 
@@ -113,19 +114,19 @@ namespace JoanZapata.XamarinIconify.Internal
                 }
 
                 // Look for an icon size
-                else if (stroke.matches("([0-9]*(\\.[0-9]*)?)dp"))
+                else if (stroke.Matches("([0-9]*(\\.[0-9]*)?)dp"))
                 {
                     iconSizePx = DpToPx(context, Convert.ToSingle(stroke.Substring(0, stroke.Length - 2)));
                 }
-                else if (stroke.matches("([0-9]*(\\.[0-9]*)?)sp"))
+                else if (stroke.Matches("([0-9]*(\\.[0-9]*)?)sp"))
                 {
                     iconSizePx = SpToPx(context, Convert.ToSingle(stroke.Substring(0, stroke.Length - 2)));
                 }
-                else if (stroke.matches("([0-9]*)px"))
+                else if (stroke.Matches("([0-9]*)px"))
                 {
                     iconSizePx = Convert.ToInt32(stroke.Substring(0, stroke.Length - 2));
                 }
-                else if (stroke.matches("@dimen/(.*)"))
+                else if (stroke.Matches("@dimen/(.*)"))
                 {
                     iconSizePx = GetPxFromDimen(context, stroke.Substring(7));
                     if (iconSizePx < 0)
@@ -133,17 +134,17 @@ namespace JoanZapata.XamarinIconify.Internal
                         throw new ArgumentException("Unknown resource " + stroke + " in \"" + fullText + "\"");
                     }
                 }
-                else if (stroke.matches("([0-9]*(\\.[0-9]*)?)%"))
+                else if (stroke.Matches("([0-9]*(\\.[0-9]*)?)%"))
                 {
                     iconSizeRatio = Convert.ToSingle(stroke.Substring(0, stroke.Length - 1))/100f;
                 }
 
-                // Look for an icon color
-                else if (stroke.matches("#([0-9A-Fa-f]{6}|[0-9A-Fa-f]{8})"))
+                // Look for an icon WithColor
+                else if (stroke.Matches("#([0-9A-Fa-f]{6}|[0-9A-Fa-f]{8})"))
                 {
                     iconColor = Color.ParseColor(stroke);
                 }
-                else if (stroke.matches("@color/(.*)"))
+                else if (stroke.Matches("@WithColor/(.*)"))
                 {
                     iconColor = GetColorFromResource(context, stroke.Substring(7));
                     if (iconColor == int.MaxValue)
@@ -179,7 +180,7 @@ namespace JoanZapata.XamarinIconify.Internal
         public static int GetColorFromResource(Context context, string resName)
         {
             var resources = context.Resources;
-            var resId = resources.GetIdentifier(resName, "color", context.PackageName);
+            var resId = resources.GetIdentifier(resName, "WithColor", context.PackageName);
             if (resId <= 0)
             {
                 return int.MaxValue;
@@ -197,13 +198,13 @@ namespace JoanZapata.XamarinIconify.Internal
             return TypedValue.ApplyDimension(ComplexUnitType.Sp, sp, context.Resources.DisplayMetrics);
         }
 
-        private class HasOnViewAttachListener_OnViewAttachListenerAnonymousInnerClassHelper :
-            IHasOnViewAttachListener_OnViewAttachListener
+        private class OnViewAttachListenerOnViewAttachListenerAnonymousInnerClassHelper :
+            IOnViewAttachListener
         {
             private readonly TextView _target;
             private bool _isAttached;
 
-            public HasOnViewAttachListener_OnViewAttachListenerAnonymousInnerClassHelper(TextView target)
+            public OnViewAttachListenerOnViewAttachListenerAnonymousInnerClassHelper(TextView target)
             {
                 _target = target;
             }
@@ -222,23 +223,25 @@ namespace JoanZapata.XamarinIconify.Internal
 				});
 				#else
 
-				AnimationHandler ();
+                AnimationHandler();
 #endif
             }
-
-			void AnimationHandler ()
-			{
-				_target.PostDelayed (() =>  {
-					if (_isAttached) {
-						_target.Invalidate ();
-						AnimationHandler();
-					}
-				}, 10);
-			}
 
             public void OnDetach()
             {
                 _isAttached = false;
+            }
+
+            private void AnimationHandler()
+            {
+                _target.PostDelayed(() =>
+                {
+                    if (_isAttached)
+                    {
+                        _target.Invalidate();
+                        AnimationHandler();
+                    }
+                }, 10);
             }
         }
     }

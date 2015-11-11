@@ -38,4 +38,11 @@
         android:textColor="#CDCDCD"
         android:layout_width="match_parent"
         android:layout_height="wrap_content" />
+    <JoanZapata.XamarinIconify.Widget.IconToggleButton
+        android:layout_width="match_parent"
+        android:layout_height="425.1dp"
+        android:id="@+id/toggleButton1"
+        android:textOn="{fa-cog spin #00aa00}"
+        android:textOff="{fa-cog #aa0000}"
+        android:textSize="48dp" />
 </LinearLayout>
