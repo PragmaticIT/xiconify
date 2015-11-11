@@ -30,7 +30,8 @@ namespace testapp
 				button.Text = string.Format ("{0} clicks!", count++);
 
 			};
-			button.Background = new JoanZapata.XamarinIconify.IconDrawable (this, JoanZapata.XamarinIconify.Fonts.FontAwesomeIcons.fa_500px.ToString()).color(Color.Red);
+			button.SetBackgroundDrawable (new JoanZapata.XamarinIconify.IconDrawable (this, JoanZapata.XamarinIconify.Fonts.FontAwesomeIcons.fa_500px.ToString ()).color (Color.Red));
+	//		button.Background = new JoanZapata.XamarinIconify.IconDrawable (this, JoanZapata.XamarinIconify.Fonts.FontAwesomeIcons.fa_500px.ToString()).color(Color.Red);
 		}
 
 
