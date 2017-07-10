@@ -8,6 +8,7 @@ using AttributeSet = Android.Util.IAttributeSet;
 
 namespace JoanZapata.XamarinIconify.Widget
 {
+    [Register("JoanZapata.XamarinIconify.Widget.IconToggleButton")]
     public class IconToggleButton : ToggleButton, IHasOnViewAttachListener
     {
         private HasOnViewAttachListenerDelegate _delegate;

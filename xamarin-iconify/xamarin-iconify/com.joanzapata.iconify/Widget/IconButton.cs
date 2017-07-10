@@ -8,6 +8,7 @@ using AttributeSet = Android.Util.IAttributeSet;
 
 namespace JoanZapata.XamarinIconify.Widget
 {
+    [Register("JoanZapata.XamarinIconify.Widget.IconButton")]
     public class IconButton : Button, IHasOnViewAttachListener
     {
         private HasOnViewAttachListenerDelegate _delegate;
